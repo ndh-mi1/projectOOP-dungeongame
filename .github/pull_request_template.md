@@ -17,15 +17,4 @@
 - [ ] **Clean Code & SOLID:** Không có code chết, không có `catch {}` rỗng, cấm `is/as` + downcast, cấm field public.
 - [ ] **Ranh giới sở hữu:** Tác giả không chỉnh sửa mã nguồn thuộc thư mục độc quyền của Reviewer.
 
----
 
-## 3. 2 CÂU HỎI HIỂU BÀI (COMPREHENSION QUESTIONS)
-*(Reviewer bắt buộc đặt 2 câu hỏi bên dưới cho Tác giả trước khi Approve PR)*
-
-1. **Câu hỏi 1 (Lý do thiết kế & SRP):**  
-   *Reviewer hỏi:* [Điền câu hỏi tại sao phương thức này lại đặt ở lớp này?]  
-   *Tác giả trả lời:* 
-
-2. **Câu hỏi 2 (Phản biện biên & LSP):**  
-   *Reviewer hỏi:* [Điền câu hỏi về ca biên hoặc khả năng thay thế lớp con LSP?]  
-   *Tác giả trả lời:* 
