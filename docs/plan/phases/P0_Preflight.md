@@ -75,5 +75,5 @@
 ---
 
 ## 9. QUẢN TRỊ RỦI RO & PHƯƠNG ÁN CẮT GIẢM
-- **Rủi ro**: Thành viên chưa cài đặt đúng phiên bản Unity 2022.3 LTS hoặc thiếu module build Windows Standalone.
-- **Biện pháp xử lý**: Sử dụng Unity Hub đồng bộ phiên bản chính xác; TV1 hỗ trợ TV2 cấu hình Unity Test Framework qua TeamViewer/AnyDesk trong ngày đầu tuần.
+- **Rủi ro**: Thành viên chưa cài đặt đúng phiên bản Unity 6 (`6000.0.85f2`) hoặc thiếu module build Windows Standalone.
+- **Biện pháp xử lý**: Sử dụng Unity Hub đồng bộ phiên bản Unity 6 chính xác (đường dẫn đã xác nhận trên máy: `D:\Unity\Editor\6000.0.85f2\Editor\Unity.exe`); TV1 hỗ trợ TV2 cấu hình Unity Test Framework qua TeamViewer/AnyDesk trong ngày đầu tuần.

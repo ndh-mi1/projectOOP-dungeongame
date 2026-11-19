@@ -30,7 +30,7 @@ Khi có sự sai khác giữa Slide hướng dẫn (`HuongdanXDGame_v2026.pdf`) 
 ## 2. KẾT QUẢ ĐỒNG THUẬN TỪ BƯỚC 1 PHỎNG VẤN NGƯỢC (GRILL-ME)
 
 Toàn bộ 10 câu hỏi đã được chốt với phương án tối ưu:
-1. **Engine & Pipeline**: Unity 2022.3 LTS (hoặc Unity 6 LTS) + Universal Render Pipeline (2D URP) với 2D Lights và Pixel Perfect Camera ($32 \times 32$ PPU).
+1. **Engine & Pipeline**: Unity 6 (`6000.0.85f2`) + Universal Render Pipeline (2D URP) với 2D Lights và Pixel Perfect Camera ($32 \times 32$ PPU). Đã xác nhận trực tiếp qua đường dẫn máy tính: `D:\Unity\Editor\6000.0.85f2\Editor\Unity.exe`.
 2. **Tiến độ**: 5 tuần thực tế (T1 đến T5) bám sát lộ trình chuẩn PDF. Feature Freeze vào đầu T5.
 3. **Phân chia nhân sự**:
    - **TV1**: Chịu trách nhiệm Combat, Real-time Physics/Collision, A* Pathfinding, AI Behaviors, Skills/Status, Game Loop 60Hz, Combat HUD, FX Player.

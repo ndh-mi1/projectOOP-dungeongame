@@ -15,7 +15,7 @@ Toàn bộ đồ họa trong game được đồng nhất theo phong cách Pixel
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        THIẾT LẬP RENDER PIPELINE                       │
-│  - Engine: Unity 2022.3 LTS (URP 2D)                                   │
+│  - Engine: Unity 6 (6000.0.85f2 URP 2D)                                │
 │  - Độ phân giải gốc (Virtual Resolution): 480 × 270 (Tỷ lệ 16:9)       │
 │  - Pixels Per Unit (PPU): 32 (Mỗi tile 32×32 tương đương 1.0 Unit)     │
 │  - Filter Mode: Point (no filter) | Compression: None (Tránh mờ pixel) │

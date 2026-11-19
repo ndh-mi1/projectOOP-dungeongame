@@ -3,7 +3,7 @@
 
 [![Course](https://img.shields.io/badge/Course-MI4090%20(K69)-blue.svg)](https://sami.hust.edu.vn/)
 [![University](https://img.shields.io/badge/University-HUST-red.svg)](https://hust.edu.vn/)
-[![Engine](https://img.shields.io/badge/Engine-Unity%202022.3%20LTS%20URP-black.svg)](https://unity.com/)
+[![Engine](https://img.shields.io/badge/Engine-Unity%206%20(6000.0.85f2)%20URP-black.svg)](https://unity.com/)
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20Core%20(Pure%20C%23)-brightgreen.svg)]()
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20CC0-green.svg)]()
 
@@ -24,7 +24,7 @@
 
 ## 🎮 TỔNG QUAN TRÒ CHƠI
 
-**Crystal Depths** là trò chơi vượt ải hầm ngục thời gian thực (Top-down 2D Real-time Roguelike) được xây dựng trên nền tảng Unity 2022.3 LTS (URP) và ngôn ngữ C#.
+**Crystal Depths** là trò chơi vượt ải hầm ngục thời gian thực (Top-down 2D Real-time Roguelike) được xây dựng trên nền tảng Unity 6 (phiên bản `6000.0.85f2` URP 2D) và ngôn ngữ C#.
 - **Cốt truyện:** Vương quốc sống nhờ Trái Tim Pha Lê cổ đại đặt sâu dưới lòng đất. Hắc Kỵ Sĩ đã đập vỡ nó, khiến các mảnh vỡ phân tán qua nhiều tầng hầm ngục nguy hiểm. Người chơi nhập vai Hiệp sĩ hoặc Pháp sư xuống hầm thu thập 3 mảnh pha lê từ 3 trùm để đối đầu trùm cuối.
 - **Quy mô cam kết (Full Scope):**
   - **10 PCUs (Màn chơi cơ chế riêng):** 8 tầng chiến dịch theo cốt truyện + 2 chế độ mở rộng (*Endless Descent* & *Boss Rush*).

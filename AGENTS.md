@@ -2,7 +2,7 @@
 <!-- Cập nhật: 2026-11-19 | Sở hữu: Nguyễn Đình Huy & Nguyễn Công Huy -->
 
 ## 1. DỰ ÁN VÀ BỐI CẢNH
-- **Trò chơi:** Crystal Depths – Hầm Ngục Pha Lê (Roguelike Dungeon 2D Top-down, C#, Unity 2022.3 LTS URP).
+- **Trò chơi:** Crystal Depths – Hầm Ngục Pha Lê (Roguelike Dungeon 2D Top-down, C#, Unity 6 [6000.0.85f2] URP 2D).
 - **Học phần:** MI4090 (K69), SAMI – ĐHBK Hà Nội. Nhóm 2 TV: Nguyễn Đình Huy (TV1) & Nguyễn Công Huy (TV2).
 - **Mục tiêu:** Điểm 10.0 (Mức A), mở cả 2 cổng G_Product (Clean-room ≤3p) & G_Epistemic (Hiểu sâu, Trục II ≥3.0/6.0).
 
@@ -15,7 +15,7 @@
   - `tests/Game.Core.Tests/`: Suite NUnit EditMode headless chạy độc lập (<2s).
 - **Lệnh thực thi:**
   - Kiểm tra tĩnh: `tools/check-core-purity.ps1` và `tools/check-code-smells.ps1`.
-  - Lệnh build/test Unity CLI: [Điền sau P0].
+  - Lệnh test Unity 6 CLI: `"D:\Unity\Editor\6000.0.85f2\Editor\Unity.exe" -batchmode -runTests -testPlatform EditMode -projectPath .`
 
 ## 3. 10 ĐIỀU LUẬT CỨNG (BẮT BUỘC TUÂN THỦ)
 1. **Game.Core Thuần C#:** Cấm `using UnityEngine;`, `using UnityEditor;`, `using System.Windows.Forms;`. Mọi phụ thuộc hạ tầng phải qua Interface (DIP) tiêm qua Constructor.

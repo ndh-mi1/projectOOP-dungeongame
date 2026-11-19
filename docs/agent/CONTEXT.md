@@ -23,7 +23,8 @@
 - Quét các mẫu mùi code (Anti-patterns): `powershell -File tools/check-code-smells.ps1`
 - Cập nhật tự động trạng thái máy: `powershell -File tools/update-state.ps1`
 - Kiểm toán Git Blame & Commit: `powershell -File tools/git-audit.ps1`
-- Chạy Unit Test Unity EditMode: [Cấu hình sau khi tạo Unity Project ở cuối P0]
+- Đường dẫn Unity 6 Editor: `D:\Unity\Editor\6000.0.85f2\Editor\Unity.exe`
+- Chạy Unit Test Unity EditMode CLI: `"D:\Unity\Editor\6000.0.85f2\Editor\Unity.exe" -batchmode -runTests -testPlatform EditMode -testResults results.xml -projectPath .`
 
 ## 4. 5 QUYẾT ĐỊNH THIẾT KẾ GẦN NHẤT (ADR)
 1. [ADR-0001: Khởi tạo Hạ tầng Ngữ cảnh và Phân quyền Không Xung đột](file:///d:/project/projectOOPnew/docs/adr/0001-agent-workspace.md) (Trạng thái: Accepted).
