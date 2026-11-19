@@ -8,17 +8,17 @@
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20CC0-green.svg)]()
 
 > **Bài tập lớn học phần Lập trình hướng đối tượng (MI4090 – K69)**  
-> **Viện Toán ứng dụng và Tin học (SAMI), Đại học Bách khoa Hà Nội**  
-> **Đề tài số 58 (Phân nhánh 1: Real-time Action / Roguelike Dungeon)**
+> **Viện Toán ứng dụng và Tin học, Đại học Bách khoa Hà Nội**  
+> **Đề tài 58 (Roguelike Dungeon)**
 
 ---
 
-## 👥 THÀNH VIÊN NHÓM PHÁT TRIỂN
+## 👥 THÀNH VIÊN NHÓM 
 
 | STT | Họ và Tên | Mã Số Sinh Viên (MSSV) | Vai Trò & Phân Hệ Sở Hữu | GitHub / Email |
 |:---:|---|:---:|---|---|
-| 1 | **Nguyễn Đình Huy (TV1)** | **202418918** | **Lead Combat & Engine Core**<br>• Thực thể & Chiến đấu (Entities, Combat)<br>• 7 Kiểu AI Quái vật (Strategy Pattern)<br>• Va chạm Swept AABB 60Hz & Spatial Hash<br>• Vòng lặp Fixed Timestep & Animation Adapter | [@ndh-mi1](https://github.com/ndh-mi1)<br>`dinggwee03@gmail.com` |
-| 2 | **Nguyễn Công Huy (TV2)** | **202418914** | **Lead World, Meta & Storage**<br>• Sinh tầng hầm ngẫu nhiên (BSP + MST)<br>• Ghép ngói tự động Blob47 Autotiler<br>• Kho đồ & Trang bị (Decorator Pattern)<br>• Lưu trữ JSON an toàn & UI ScreenManager | `huy.nc2418914@sis.hust.edu.vn` |
+| 1 | **Nguyễn Đình Huy** | **202418918** | **Lead Combat & Engine Core**<br>• Thực thể & Chiến đấu (Entities, Combat)<br>• 7 Kiểu AI Quái vật (Strategy Pattern)<br>• Va chạm Swept AABB 60Hz & Spatial Hash<br>• Vòng lặp Fixed Timestep & Animation Adapter | [@ndh-mi1](https://github.com/ndh-mi1)<br>`dinggwee03@gmail.com` |
+| 2 | **Nguyễn Công Huy** | **202418914** | **Lead World, Meta & Storage**<br>• Sinh tầng hầm ngẫu nhiên (BSP + MST)<br>• Ghép ngói tự động Blob47 Autotiler<br>• Kho đồ & Trang bị (Decorator Pattern)<br>• Lưu trữ JSON an toàn & UI ScreenManager | `huy.nc2418914@sis.hust.edu.vn` |
 
 ---
 
