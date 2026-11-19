@@ -1,0 +1,42 @@
+# ==========================================
+# ANTIGRAVITY AGENT WORKSPACE IGNORES
+# ==========================================
+.agents/local/
+docs/agent/.scratch/
+*.local.md
+
+# ==========================================
+# UNITY BUILD & TEMPORARY FILES
+# ==========================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# ==========================================
+# VISUAL STUDIO & IDE GENERATED FILES
+# ==========================================
+.vs/
+*.csproj
+*.unityproj
+*.sln.DotSettings
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# ==========================================
+# OS GENERATED FILES
+# ==========================================
+.DS_Store
+Thumbs.db
+desktop.ini

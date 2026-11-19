@@ -1,0 +1,20 @@
+# [Đình Huy / Công Huy / Cả hai]: <type>(<scope>): <mô tả ngắn gọn bằng tiếng Anh>
+#
+# --- DANH SÁCH TIỀN TỐ TÁC GIẢ BẮT BUỘC ---
+# [Đình Huy]: Dùng cho mọi commit do Nguyễn Đình Huy thực hiện
+# [Công Huy]: Dùng cho mọi commit do Nguyễn Công Huy thực hiện
+# [Cả hai]:   Dùng cho commit cấu hình chung, merge release, hoặc tài liệu chung
+#
+# --- DANH SÁCH CÁC TYPE HỢP LỆ ---
+# feat:     Tính năng mới (AI, Combat, World Gen, Items, UI...)
+# test:     Thêm hoặc sửa đổi Unit/Integration/Regression Test
+# fix:      Sửa lỗi logic hoặc bug ghi nhận trong Bug Log (kèm Bug-xx)
+# refactor: Tái cấu trúc mã nguồn theo GoF pattern hoặc SOLID
+# perf:     Tối ưu hiệu năng (Object Pool, Spatial Hash, giảm GC)
+# docs:     Cập nhật tài liệu, UML, ma trận truy vết hoặc báo cáo
+# chore:    Cấu hình Git, build scripts, asmdef, .gitignore
+#
+# --- VÍ DỤ ---
+# [Đình Huy]: feat(combat): implement swept AABB collision detection to prevent tunneling
+# [Công Huy]: feat(world): implement BSP dungeon split and MST corridor connector
+# [Cả hai]: chore(repo): initialize project structure and configure .gitignore and asmdef

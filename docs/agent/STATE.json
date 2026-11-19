@@ -1,0 +1,57 @@
+﻿{
+    "schemaVersion":  1,
+    "updated":  "2026-11-19T21:22:37+07:00",
+    "planLocked":  true,
+    "phase":  "P0",
+    "phaseStatus":  "not_started",
+    "milestone":  "M0",
+    "targets":  {
+                    "pcu":  10,
+                    "uc":  10,
+                    "entityClasses":  16,
+                    "umlClasses":  24,
+                    "algorithms":  6,
+                    "aiKinds":  7,
+                    "gof":  5,
+                    "unitTests":  24,
+                    "integrationTests":  10,
+                    "playtestCases":  20,
+                    "bugs":  8,
+                    "commits":  40
+                },
+    "counts":  {
+                   "pcu":  0,
+                   "uc":  0,
+                   "entityClasses":  0,
+                   "umlClasses":  0,
+                   "algorithms":  0,
+                   "aiKinds":  0,
+                   "gof":  0,
+                   "unitTests":  0,
+                   "integrationTests":  0,
+                   "playtestCases":  0,
+                   "bugs":  0,
+                   "commits":  {
+                                   "TV1":  0,
+                                   "TV2":  0
+                               },
+                   "blamePct":  {
+                                    "TV1":  null,
+                                    "TV2":  null
+                                }
+               },
+    "gates":  {
+                  "coreHeadlessOk":  false,
+                  "allTestsGreen":  false,
+                  "cleanRoomOk":  false,
+                  "usingAuditOk":  false
+              },
+    "openBlockers":  [
+
+                     ],
+    "nextActions":  [
+                        "Khá»Ÿi táº¡o kho Git vÃ  cáº¥u hÃ¬nh .gitignore",
+                        "Táº¡o cáº¥u trÃºc solution C# vÃ  asmdef cho Game.Core",
+                        "Cháº¡y ca test Unit Ä‘áº§u tiÃªn á»Ÿ cháº¿ Ä‘á»™ Headless"
+                    ]
+}

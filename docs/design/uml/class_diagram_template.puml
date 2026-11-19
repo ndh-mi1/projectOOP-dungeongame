@@ -1,0 +1,42 @@
+@startuml class_diagram_template
+skinparam classAttributeIconSize 0
+skinparam monochrome false
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+package "Game.Core.Contracts" #FEF3C7 {
+    interface ITileQuery {
+        + IsWalkable(x: int, y: int): bool
+        + IsOpaque(x: int, y: int): bool
+    }
+
+    interface IGameEventBus {
+        + Publish<T>(eventData: T): void
+        + Subscribe<T>(handler: Action<T>): void
+        + Unsubscribe<T>(handler: Action<T>): void
+    }
+}
+
+package "Game.Core.Combat (Đình Huy)" #FEE2E2 {
+    abstract class Actor {
+        - _position: GridPos
+        - _health: Health
+        + Move(direction: GridPos): void
+        + TakeDamage(info: DamageInfo): void
+    }
+}
+
+package "Game.Core.World (Công Huy)" #DBEAFE {
+    class Floor implements ITileQuery {
+        - _width: int
+        - _height: int
+        - _tiles: TileKind[,]
+        + IsWalkable(x: int, y: int): bool
+        + IsOpaque(x: int, y: int): bool
+    }
+}
+
+Actor ..> ITileQuery : queries >
+Floor ..> IGameEventBus : publishes >
+
+@enduml

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Git pre-commit hook calling PowerShell check scripts
+powershell.exe -ExecutionPolicy Bypass -File .githooks/pre-commit.ps1
+exit $?
