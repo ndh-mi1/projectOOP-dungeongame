@@ -39,7 +39,7 @@ if (-not $isGitRepo) {
 
 # 1. Thống kê commit theo tác giả
 Write-Host "`n1. THỐNG KÊ COMMIT THEO TÁC GIẢ (shortlog):" -ForegroundColor White
-$shortlog = git shortlog -sn --no-merges 2>$null
+$shortlog = git shortlog -sn --no-merges HEAD 2>$null
 if ($shortlog) {
     $shortlog | ForEach-Object { Write-Host "   $_" -ForegroundColor Green }
 } else {

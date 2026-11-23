@@ -1,9 +1,9 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-19T21:28:54+07:00",
+    "updated":  "2026-11-23T23:19:44+07:00",
     "planLocked":  true,
     "phase":  "P0",
-    "phaseStatus":  "not_started",
+    "phaseStatus":  "in_progress",
     "milestone":  "M0",
     "targets":  {
                     "pcu":  10,
@@ -27,7 +27,7 @@
                    "algorithms":  0,
                    "aiKinds":  0,
                    "gof":  0,
-                   "unitTests":  0,
+                   "unitTests":  1,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
