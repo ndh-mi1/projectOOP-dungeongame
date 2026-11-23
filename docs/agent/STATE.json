@@ -1,10 +1,10 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-23T23:37:46+07:00",
+    "updated":  "2026-11-24T00:40:51+07:00",
     "planLocked":  true,
-    "phase":  "P0",
+    "phase":  "P4",
     "phaseStatus":  "in_progress",
-    "milestone":  "M0",
+    "milestone":  "M1",
     "targets":  {
                     "pcu":  10,
                     "uc":  10,
@@ -22,17 +22,17 @@
     "counts":  {
                    "pcu":  0,
                    "uc":  0,
-                   "entityClasses":  2,
-                   "umlClasses":  2,
+                   "entityClasses":  7,
+                   "umlClasses":  7,
                    "algorithms":  0,
                    "aiKinds":  0,
                    "gof":  0,
-                   "unitTests":  11,
+                   "unitTests":  27,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
                    "commits":  {
-                                   "TV1":  2,
+                                   "TV1":  6,
                                    "TV2":  0
                                },
                    "blamePct":  {

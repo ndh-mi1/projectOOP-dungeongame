@@ -2,8 +2,8 @@
 <!-- Cập nhật lần cuối: 2026-11-19 | Cập nhật bởi: Khởi tạo hạ tầng | Sở hữu: Cả hai -->
 
 ## 1. VỊ TRÍ HIỆN TẠI (CURRENT STATUS)
-- **Phase hiện tại:** P0 (Preflight & Environment Setup) | **Trạng thái:** completed (11 Unit Tests PASS, Asmdef khóa cứng noEngineReferences)
-- **Mốc kiểm tra:** M0 (Hoàn tất) -> Hướng tới M1 (Lõi Tối Giản Nhìn Thấy)
+- **Phase hiện tại:** P4 (Implementation - Giai đoạn 1: Core & AI Headless) | **Trạng thái:** in_progress (27 Unit Tests PASS 100%, 7 lớp C# Core)
+- **Mốc kiểm tra:** M1 (Lõi Tối Giản) — Đã hoàn thành cây thực thể Entity -> Actor -> RoguePlayer, hợp đồng IDamageable, IMovable.
 - **Kế hoạch tổng thể:** Đã khóa (Locked). Mục tiêu: 10 PCUs, 28 lớp UML, 34 automated tests, 40 commits.
 
 ## 2. TÓM TẮT KIẾN TRÚC HỆ THỐNG (10 DÒNG)
@@ -39,6 +39,6 @@
 - **R3 (Kỷ luật Git Blame):** Phải phân bố commit ngay từ Tuần 1, không dồn việc vào cuối kỳ.
 
 ## 6. VIỆC DANG DỞ (NEXT ACTIONS)
-- Hoàn thành Phase P0: Đã cấu hình Packages/manifest.json, ProjectVersion.txt, 4 asmdef, 11 tests.
-- Bước tiếp theo của Đình Huy (TV1): Cài đặt Entity cấp cao: Entity.cs -> Actor.cs -> RoguePlayer.cs.
-- Hướng tới Mốc M1: Gắn PlayerView (MonoBehaviour Adapter) để hiển thị nhân vật di chuyển WASD trên Scene.
+- Hoàn thành W4.2: Đã cài đặt xong Entity.cs, Actor.cs, RoguePlayer.cs, IDamageable.cs, IMovable.cs và 27 Unit Tests (32 test cases).
+- Bước tiếp theo của Đình Huy (TV1): Cài đặt thuật toán A* (Pathfinder.cs), chiến thuật ChaseAI.cs, và Enemy.cs.
+- Hướng tới Mốc M1: Kết nối GameEventBus (OnEnemyKilled) và tạo PlayerView mỏng trên Unity Scene.

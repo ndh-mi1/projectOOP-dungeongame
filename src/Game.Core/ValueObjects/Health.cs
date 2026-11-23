@@ -40,6 +40,11 @@ namespace Game.Core.ValueObjects
         }
 
         /// <summary>
+        /// Bí danh (Alias) cho phương thức Damage để phù hợp với ngữ cảnh nhận sát thương.
+        /// </summary>
+        public void TakeDamage(int amount) => Damage(amount);
+
+        /// <summary>
         /// Hồi phục sinh lực. Giá trị không vượt quá Max. Không hồi máu nếu thực thể đã chết.
         /// </summary>
         public void Heal(int amount)
