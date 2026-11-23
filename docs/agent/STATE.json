@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-23T23:19:44+07:00",
+    "updated":  "2026-11-23T23:26:59+07:00",
     "planLocked":  true,
     "phase":  "P0",
     "phaseStatus":  "in_progress",
@@ -22,17 +22,17 @@
     "counts":  {
                    "pcu":  0,
                    "uc":  0,
-                   "entityClasses":  0,
-                   "umlClasses":  0,
+                   "entityClasses":  2,
+                   "umlClasses":  2,
                    "algorithms":  0,
                    "aiKinds":  0,
                    "gof":  0,
-                   "unitTests":  1,
+                   "unitTests":  11,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
                    "commits":  {
-                                   "TV1":  0,
+                                   "TV1":  1,
                                    "TV2":  0
                                },
                    "blamePct":  {
