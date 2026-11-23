@@ -2,8 +2,8 @@
 <!-- Cập nhật lần cuối: 2026-11-19 | Cập nhật bởi: Khởi tạo hạ tầng | Sở hữu: Cả hai -->
 
 ## 1. VỊ TRÍ HIỆN TẠI (CURRENT STATUS)
-- **Phase hiện tại:** P0 (Preflight & Environment Setup) | **Trạng thái:** not_started
-- **Mốc kiểm tra:** M0 (Chuẩn bị hạ tầng & Kho Git)
+- **Phase hiện tại:** P0 (Preflight & Environment Setup) | **Trạng thái:** completed (11 Unit Tests PASS, Asmdef khóa cứng noEngineReferences)
+- **Mốc kiểm tra:** M0 (Hoàn tất) -> Hướng tới M1 (Lõi Tối Giản Nhìn Thấy)
 - **Kế hoạch tổng thể:** Đã khóa (Locked). Mục tiêu: 10 PCUs, 28 lớp UML, 34 automated tests, 40 commits.
 
 ## 2. TÓM TẮT KIẾN TRÚC HỆ THỐNG (10 DÒNG)
@@ -39,5 +39,6 @@
 - **R3 (Kỷ luật Git Blame):** Phải phân bố commit ngay từ Tuần 1, không dồn việc vào cuối kỳ.
 
 ## 6. VIỆC DANG DỞ (NEXT ACTIONS)
-- Bắt đầu Giai đoạn P0: Thiết lập kho Git, thêm `.gitignore`, tạo thư mục solution và cấu hình `.asmdef`.
-- Kích hoạt phiên làm việc đầu tiên bằng `/session-start`.
+- Hoàn thành Phase P0: Đã cấu hình Packages/manifest.json, ProjectVersion.txt, 4 asmdef, 11 tests.
+- Bước tiếp theo của Đình Huy (TV1): Cài đặt Entity cấp cao: Entity.cs -> Actor.cs -> RoguePlayer.cs.
+- Hướng tới Mốc M1: Gắn PlayerView (MonoBehaviour Adapter) để hiển thị nhân vật di chuyển WASD trên Scene.
