@@ -22,3 +22,8 @@ Tài liệu này ghi lại các thông báo chuyển giao, thay đổi hợp đ�
 - **Gửi tới:** Nguyễn Công Huy (TV2)
 - **Nội dung:** Mình đã hoàn thành các interface [IDamageable.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IDamageable.cs), [IMovable.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IMovable.cs) và lớp cơ sở [Actor.cs](file:///d:/project/projectOOPnew/src/Game.Core/Entities/Actor.cs), [RoguePlayer.cs](file:///d:/project/projectOOPnew/src/Game.Core/Entities/RoguePlayer.cs). Khi bạn cài đặt các lớp vật phẩm (`Item.cs`, `Potion.cs`), bạn có thể gọi thẳng phương thức `target.Heal(amount)` hoặc tác động qua `IDamageable` mà không cần quan tâm chi tiết bên trong.
 - **Hạn cần khớp:** Mốc M1.
+
+### [2026-11-24][Đình Huy] Hoàn thiện GameEventBus và sự kiện EnemyKilledEvent
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn thành [IGameEventBus.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IGameEventBus.cs), [GameEventBus.cs](file:///d:/project/projectOOPnew/src/Game.Core/Events/GameEventBus.cs) và [EnemyKilledEvent.cs](file:///d:/project/projectOOPnew/src/Game.Core/Events/EnemyKilledEvent.cs). Khi quái vật chết, `Enemy` sẽ tự động phát sự kiện này mang theo `EnemyId`, `EnemyType`, `Position` và `ExperienceReward`. Bạn có thể cho lớp `LootRoller` đăng ký lắng nghe sự kiện `EnemyKilledEvent` trên bus để thả đồ nhé!
+- **Hạn cần khớp:** Mốc M1.
