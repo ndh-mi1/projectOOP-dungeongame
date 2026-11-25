@@ -15,13 +15,19 @@ namespace Game.Core.AI
         private const int DefaultMaxSearchNodes = 2000;
         private const int StepCost = 1;
 
-        private static readonly GridPos[] CardinalDirections = new[]
+        /// <summary>
+        /// Trả về ô bước kế tiếp trên đường đi ngắn nhất từ start đến target (tiện ích dùng chung cho AI).
+        /// </summary>
+        public static GridPos GetNextStep(GridPos start, GridPos target, ITileQuery tileQuery)
         {
-            new GridPos(0, 1),   // Lên
-            new GridPos(0, -1),  // Xuống
-            new GridPos(1, 0),   // Phải
-            new GridPos(-1, 0)   // Trái
-        };
+            if (start == target)
+            {
+                return start;
+            }
+
+            IReadOnlyList<GridPos> path = FindPath(start, target, tileQuery);
+            return path.Count >= 2 ? path[1] : start;
+        }
 
         /// <summary>
         /// Tìm đường đi ngắn nhất từ tọa độ bắt đầu đến tọa độ mục tiêu.
@@ -65,7 +71,8 @@ namespace Game.Core.AI
                 }
             }
 
-            var openSet = new PriorityQueue<GridPos, int>();
+            var openSet = new MinHeap();
+            var closedSet = new HashSet<GridPos>();
             var cameFrom = new Dictionary<GridPos, GridPos>();
             var gScore = new Dictionary<GridPos, int>();
 
@@ -77,6 +84,11 @@ namespace Game.Core.AI
             while (openSet.Count > 0 && searchedCount < maxSearchNodes)
             {
                 GridPos current = openSet.Dequeue();
+                if (!closedSet.Add(current))
+                {
+                    continue;
+                }
+
                 searchedCount++;
 
                 if (current == actualTarget)
@@ -86,11 +98,11 @@ namespace Game.Core.AI
 
                 int currentG = gScore[current];
 
-                foreach (GridPos dir in CardinalDirections)
+                foreach (GridPos dir in GridPos.CardinalDirections)
                 {
                     GridPos neighbor = current + dir;
 
-                    if (!tileQuery.IsWalkable(neighbor.X, neighbor.Y))
+                    if (closedSet.Contains(neighbor) || !tileQuery.IsWalkable(neighbor.X, neighbor.Y))
                     {
                         continue;
                     }
@@ -111,12 +123,103 @@ namespace Game.Core.AI
             return Array.Empty<GridPos>();
         }
 
+        private sealed class MinHeap
+        {
+            private readonly struct HeapNode
+            {
+                public readonly GridPos Pos;
+                public readonly int Priority;
+
+                public HeapNode(GridPos pos, int priority)
+                {
+                    Pos = pos;
+                    Priority = priority;
+                }
+            }
+
+            private readonly List<HeapNode> _heap = new List<HeapNode>();
+
+            public int Count => _heap.Count;
+
+            public void Enqueue(GridPos pos, int priority)
+            {
+                _heap.Add(new HeapNode(pos, priority));
+                SiftUp(_heap.Count - 1);
+            }
+
+            public GridPos Dequeue()
+            {
+                GridPos top = _heap[0].Pos;
+                int lastIndex = _heap.Count - 1;
+                _heap[0] = _heap[lastIndex];
+                _heap.RemoveAt(lastIndex);
+
+                if (_heap.Count > 0)
+                {
+                    SiftDown(0);
+                }
+
+                return top;
+            }
+
+            private void SiftUp(int index)
+            {
+                while (index > 0)
+                {
+                    int parentIndex = (index - 1) / 2;
+                    if (_heap[parentIndex].Priority <= _heap[index].Priority)
+                    {
+                        break;
+                    }
+
+                    Swap(index, parentIndex);
+                    index = parentIndex;
+                }
+            }
+
+            private void SiftDown(int index)
+            {
+                int count = _heap.Count;
+                while (true)
+                {
+                    int left = (2 * index) + 1;
+                    int right = (2 * index) + 2;
+                    int smallest = index;
+
+                    if (left < count && _heap[left].Priority < _heap[smallest].Priority)
+                    {
+                        smallest = left;
+                    }
+
+                    if (right < count && _heap[right].Priority < _heap[smallest].Priority)
+                    {
+                        smallest = right;
+                    }
+
+                    if (smallest == index)
+                    {
+                        break;
+                    }
+
+                    Swap(index, smallest);
+                    index = smallest;
+                }
+            }
+
+            private void Swap(int a, int b)
+            {
+                HeapNode temp = _heap[a];
+                _heap[a] = _heap[b];
+                _heap[b] = temp;
+            }
+        }
+
         private static GridPos FindNearestWalkableNeighbor(GridPos target, GridPos start, ITileQuery tileQuery)
         {
             GridPos bestNeighbor = target;
             int bestDistance = int.MaxValue;
 
-            foreach (GridPos dir in CardinalDirections)
+            foreach (GridPos dir in GridPos.CardinalDirections)
             {
                 GridPos neighbor = target + dir;
                 if (tileQuery.IsWalkable(neighbor.X, neighbor.Y))

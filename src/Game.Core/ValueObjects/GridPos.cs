@@ -20,6 +20,17 @@ namespace Game.Core.ValueObjects
         public static GridPos Zero => new GridPos(0, 0);
 
         /// <summary>
+        /// Bốn hướng di chuyển vuông góc cơ bản trên lưới (Lên, Xuống, Phải, Trái).
+        /// </summary>
+        public static readonly GridPos[] CardinalDirections = new[]
+        {
+            new GridPos(0, 1),
+            new GridPos(0, -1),
+            new GridPos(1, 0),
+            new GridPos(-1, 0)
+        };
+
+        /// <summary>
         /// Tính khoảng cách Manhattan giữa 2 điểm trên lưới: |x1 - x2| + |y1 - y2|.
         /// </summary>
         public int ManhattanDistance(GridPos other)
