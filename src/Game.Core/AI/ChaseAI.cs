@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Game.Core.Contracts;
 using Game.Core.Entities;
 using Game.Core.ValueObjects;
@@ -26,22 +25,7 @@ namespace Game.Core.AI
                 return enemy.GridPosition;
             }
 
-            GridPos start = enemy.GridPosition;
-            GridPos destination = target.GridPosition;
-
-            if (start == destination)
-            {
-                return start;
-            }
-
-            IReadOnlyList<GridPos> path = Pathfinder.FindPath(start, destination, tileQuery);
-
-            if (path.Count >= 2)
-            {
-                return path[1];
-            }
-
-            return start;
+            return Pathfinder.GetNextStep(enemy.GridPosition, target.GridPosition, tileQuery);
         }
     }
 }
