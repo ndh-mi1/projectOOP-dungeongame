@@ -1,12 +1,13 @@
 using System;
 using Game.Core.Contracts;
+using Game.Core.State;
 using Game.Core.ValueObjects;
 
 namespace Game.Core.Entities
 {
     /// <summary>
     /// Lớp cơ sở trừu tượng cho mọi thực thể sống có Máu, khả năng nhận sát thương và di chuyển.
-    /// Minh chứng quan hệ Composition: Khởi tạo đối tượng Health nội bộ trong Constructor.
+    /// Minh chứng quan hệ Composition: Khởi tạo đối tượng Health và ActorStateMachine nội bộ trong Constructor.
     /// </summary>
     public abstract class Actor : Entity, IDamageable, IMovable
     {
@@ -17,6 +18,7 @@ namespace Game.Core.Entities
 
         public string Name { get; }
         public float BaseSpeed { get; protected set; }
+        public ActorStateMachine StateMachine { get; }
 
         public int CurrentHealth => _health.Current;
         public int MaxHealth => _health.Max;
@@ -44,8 +46,9 @@ namespace Game.Core.Entities
             Name = name;
             BaseSpeed = baseSpeed;
 
-            // Composition: Health được tạo trực tiếp nội tại và gắn liền vòng đời với Actor
+            // Composition: Health và ActorStateMachine được tạo trực tiếp nội tại và gắn liền vòng đời với Actor
             _health = new Health(maxHealth);
+            StateMachine = new ActorStateMachine(this, new IdleState());
         }
 
         protected Actor(
@@ -60,10 +63,11 @@ namespace Game.Core.Entities
 
         /// <summary>
         /// Xử lý nhận sát thương thông qua gói dữ liệu DamageInfo.
+        /// Bỏ qua sát thương nếu thực thể đã chết hoặc đang ở trạng thái bất tử i-frames.
         /// </summary>
         public virtual void TakeDamage(DamageInfo damageInfo)
         {
-            if (IsDead)
+            if (IsDead || !StateMachine.CanTakeDamage)
             {
                 return;
             }
@@ -75,6 +79,36 @@ namespace Game.Core.Entities
             {
                 OnKilled();
             }
+        }
+
+        /// <summary>
+        /// Kích hoạt trạng thái bất tử tạm thời (HurtState / i-frames theo luật R-02).
+        /// </summary>
+        public bool TriggerInvulnerability(float duration)
+        {
+            return StateMachine.TryTransitionTo(new HurtState(duration));
+        }
+
+        /// <summary>
+        /// Áp dụng trạng thái bị choáng (StunnedState), khóa di chuyển và tấn công.
+        /// </summary>
+        public bool ApplyStun(float duration)
+        {
+            return StateMachine.TryTransitionTo(new StunnedState(duration));
+        }
+
+        /// <summary>
+        /// Thử kích hoạt trạng thái tấn công. Guard trên FSM sẽ chặn nếu thực thể đang Stunned hoặc Dead.
+        /// </summary>
+        public bool TryPerformAttack(IActorState attackState = null)
+        {
+            if (IsDead)
+            {
+                return false;
+            }
+
+            IActorState targetState = attackState ?? new AttackState();
+            return StateMachine.TryTransitionTo(targetState);
         }
 
         /// <summary>
@@ -92,11 +126,11 @@ namespace Game.Core.Entities
 
         /// <summary>
         /// Di chuyển thực thể theo hướng vector (chuẩn hóa tránh gian lận đi chéo nhanh hơn) và delta time.
-        /// Bảo vệ bất biến: Không thể di chuyển khi đã chết.
+        /// Bảo vệ bất biến: Không thể di chuyển khi đã chết hoặc bị khống chế (CanMove == false).
         /// </summary>
         public virtual void Move(float directionX, float directionY, float deltaTime)
         {
-            if (IsDead || deltaTime <= 0.0f)
+            if (IsDead || !StateMachine.CanMove || deltaTime <= 0.0f)
             {
                 return;
             }
@@ -123,11 +157,17 @@ namespace Game.Core.Entities
             SetPosition(newX, newY);
         }
 
+        public override void Update(float deltaTime)
+        {
+            StateMachine.Update(deltaTime);
+        }
+
         /// <summary>
         /// Phương thức móc nối (Hook) được kích hoạt ngay khi thực thể chuyển trạng thái chết.
         /// </summary>
         protected virtual void OnKilled()
         {
+            StateMachine.TryTransitionTo(new DeadState());
         }
     }
 }

@@ -88,12 +88,12 @@ namespace Game.Core.Entities
 
         public override void Update(float deltaTime)
         {
-            if (IsDead)
+            if (IsDead || deltaTime <= 0.0f)
             {
                 return;
             }
 
-            // Dành chỗ cho cập nhật chu kỳ nội bộ của quái vật
+            base.Update(deltaTime);
         }
 
         /// <summary>

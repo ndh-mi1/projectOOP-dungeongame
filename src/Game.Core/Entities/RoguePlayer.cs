@@ -117,7 +117,7 @@ namespace Game.Core.Entities
                 return;
             }
 
-            // Dành chỗ cho các cập nhật chu kỳ (ví dụ: hồi mana tự nhiên hoặc đếm thời gian hồi chiêu)
+            base.Update(deltaTime);
         }
 
         private void LevelUp()
