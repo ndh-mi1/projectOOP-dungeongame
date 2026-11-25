@@ -1,10 +1,10 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-24T23:15:04+07:00",
+    "updated":  "2026-11-25T10:07:18+07:00",
     "planLocked":  true,
     "phase":  "P4",
     "phaseStatus":  "in_progress",
-    "milestone":  "M1",
+    "milestone":  "M2",
     "targets":  {
                     "pcu":  10,
                     "uc":  10,
@@ -22,17 +22,17 @@
     "counts":  {
                    "pcu":  0,
                    "uc":  0,
-                   "entityClasses":  12,
-                   "umlClasses":  12,
-                   "algorithms":  1,
-                   "aiKinds":  1,
-                   "gof":  2,
-                   "unitTests":  44,
+                   "entityClasses":  16,
+                   "umlClasses":  16,
+                   "algorithms":  3,
+                   "aiKinds":  3,
+                   "gof":  3,
+                   "unitTests":  77,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
                    "commits":  {
-                                   "TV1":  14,
+                                   "TV1":  20,
                                    "TV2":  0
                                },
                    "blamePct":  {
@@ -41,17 +41,17 @@
                                 }
                },
     "gates":  {
-                  "coreHeadlessOk":  false,
-                  "allTestsGreen":  false,
+                  "coreHeadlessOk":  true,
+                  "allTestsGreen":  true,
                   "cleanRoomOk":  false,
-                  "usingAuditOk":  false
+                  "usingAuditOk":  true
               },
     "openBlockers":  [
 
                      ],
     "nextActions":  [
-                        "Khá»Ÿi táº¡o kho Git vÃ  cáº¥u hÃ¬nh .gitignore",
-                        "Táº¡o cáº¥u trÃºc solution C# vÃ  asmdef cho Game.Core",
-                        "Cháº¡y ca test Unit Ä‘áº§u tiÃªn á»Ÿ cháº¿ Ä‘á»™ Headless"
+                        "Cai dat 4 kieu AI con lai (FlitAI, AmbushAI, ChargeAI, SlamAI)",
+                        "Cai dat CombatResolver, StatusEffect va ReactionResolver (5 phan ung nguyen to)",
+                        "Cai dat GameLoop 60Hz va RuleEngine"
                     ]
 }
