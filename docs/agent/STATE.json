@@ -1,6 +1,6 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-25T22:48:30+07:00",
+    "updated":  "2026-11-26T10:28:16+07:00",
     "planLocked":  true,
     "phase":  "P4",
     "phaseStatus":  "in_progress",
@@ -22,17 +22,17 @@
     "counts":  {
                    "pcu":  0,
                    "uc":  0,
-                   "entityClasses":  16,
-                   "umlClasses":  16,
+                   "entityClasses":  28,
+                   "umlClasses":  28,
                    "algorithms":  3,
-                   "aiKinds":  3,
+                   "aiKinds":  7,
                    "gof":  3,
-                   "unitTests":  77,
+                   "unitTests":  98,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
                    "commits":  {
-                                   "TV1":  21,
+                                   "TV1":  25,
                                    "TV2":  0
                                },
                    "blamePct":  {
@@ -50,8 +50,8 @@
 
                      ],
     "nextActions":  [
-                        "Cai dat 4 kieu AI con lai (FlitAI, AmbushAI, ChargeAI, SlamAI)",
-                        "Cai dat CombatResolver, StatusEffect va ReactionResolver (5 phan ung nguyen to)",
-                        "Cai dat GameLoop 60Hz va RuleEngine"
+                        "Cai dat GameLoop 60Hz va RuleEngine (src/Game.Core/Loop/)",
+                        "Tao Tool AtlasAnimationBuilder va ActorView (Moc M3)",
+                        "Mo PR ghep feat/tv1-core-combat-ai vao dev cung TV2"
                     ]
 }

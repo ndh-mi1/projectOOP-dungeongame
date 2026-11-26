@@ -32,3 +32,8 @@ Tài liệu này ghi lại các thông báo chuyển giao, thay đổi hợp đ�
 - **Gửi tới:** Nguyễn Công Huy (TV2)
 - **Nội dung:** Mình đã hoàn tất bộ 3 thuật toán TV1 ([Pathfinder.cs](file:///d:/project/projectOOPnew/src/Game.Core/AI/Pathfinder.cs) đã sửa dùng `MinHeap` tương thích `netstandard2.1`, [CollisionDetector.cs](file:///d:/project/projectOOPnew/src/Game.Core/Physics/CollisionDetector.cs) dùng ô `1x1` `[x, x+1]`, [LineOfSight.cs](file:///d:/project/projectOOPnew/src/Game.Core/Physics/LineOfSight.cs)) và máy trạng thái [ActorStateMachine.cs](file:///d:/project/projectOOPnew/src/Game.Core/State/ActorStateMachine.cs). Lưu ý cho `Floor : ITileQuery`: tường đặc cần trả `IsWalkable = false` & `IsOpaque = true`, hố sâu/nước điền đúng `IsOpaque = false` để quái nhìn qua được.
 - **Hạn cần khớp:** Mốc M2.
+
+### [2026-11-26][Đình Huy] Hoàn thiện ReactionTriggeredEvent & CombatResolver cho tích hợp World/FX
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn tất 7/7 kiểu AI và lõi chiến đấu (`CombatResolver.cs`, `StatusEffect.cs`, `ReactionResolver.cs`). Hệ thống phản ứng nguyên tố sẽ bắn [ReactionTriggeredEvent.cs](file:///d:/project/projectOOPnew/src/Game.Core/Combat/ReactionTriggeredEvent.cs) lên `GameEventBus`: đặc biệt với `Solidify` (tạm biến `Lava` thành `Basalt` trong `5.0s`), `Extinguish` (khói `2.0s`), và `Electrocute` (danh sách `AffectedTiles` cụm nước), phân hệ World/FX của bạn chỉ cần subscribe sự kiện này là tích hợp đồng bộ được ngay.
+- **Hạn cần khớp:** Mốc M2–M3.
