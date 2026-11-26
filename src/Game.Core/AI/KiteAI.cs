@@ -76,7 +76,7 @@ namespace Game.Core.AI
             // Vùng 1: Quá gần -> tìm ô lân cận hợp lệ giúp tăng khoảng cách ra xa mục tiêu
             if (currentDistance < MinPreferredDistance)
             {
-                return FindRetreatCell(enemyPos, targetPos, currentDistance, tileQuery);
+                return Pathfinder.FindRetreatStep(enemyPos, targetPos, tileQuery);
             }
 
             bool hasLos = LineOfSight.HasLineOfSight(enemyPos, targetPos, tileQuery);
@@ -89,34 +89,6 @@ namespace Game.Core.AI
 
             // Vùng 3: Quá xa hoặc bị tường che tầm nhìn -> tiến lại gần bằng A*
             return Pathfinder.GetNextStep(enemyPos, targetPos, tileQuery);
-        }
-
-        private static GridPos FindRetreatCell(
-            GridPos enemyPos,
-            GridPos targetPos,
-            double currentDistance,
-            ITileQuery tileQuery)
-        {
-            GridPos bestCell = enemyPos;
-            double bestDistance = currentDistance;
-
-            foreach (GridPos dir in GridPos.CardinalDirections)
-            {
-                GridPos candidate = enemyPos + dir;
-                if (!tileQuery.IsWalkable(candidate.X, candidate.Y))
-                {
-                    continue;
-                }
-
-                double dist = candidate.EuclideanDistance(targetPos);
-                if (dist > bestDistance)
-                {
-                    bestDistance = dist;
-                    bestCell = candidate;
-                }
-            }
-
-            return bestCell;
         }
     }
 }

@@ -30,6 +30,58 @@ namespace Game.Core.AI
         }
 
         /// <summary>
+        /// Tìm ô lân cận giúp tăng khoảng cách ra xa mối đe dọa (dùng chung cho KiteAI và FlitAI).
+        /// </summary>
+        public static GridPos FindRetreatStep(
+            GridPos selfPos,
+            GridPos threatPos,
+            ITileQuery tileQuery,
+            bool ignoreWalls = false)
+        {
+            double bestDistance = selfPos.EuclideanDistance(threatPos);
+            GridPos bestCell = selfPos;
+
+            foreach (GridPos dir in GridPos.CardinalDirections)
+            {
+                GridPos candidate = selfPos + dir;
+                if (!ignoreWalls && !tileQuery.IsWalkable(candidate.X, candidate.Y))
+                {
+                    continue;
+                }
+
+                double dist = candidate.EuclideanDistance(threatPos);
+                if (dist > bestDistance)
+                {
+                    bestDistance = dist;
+                    bestCell = candidate;
+                }
+            }
+
+            return bestCell;
+        }
+
+        /// <summary>
+        /// Quy đổi vector từ nguồn tới đích về hướng vuông góc chủ đạo có độ dài 1 ô.
+        /// </summary>
+        public static GridPos GetDominantCardinalDirection(GridPos from, GridPos to)
+        {
+            int dx = to.X - from.X;
+            int dy = to.Y - from.Y;
+
+            if (dx == 0 && dy == 0)
+            {
+                return GridPos.Zero;
+            }
+
+            if (Math.Abs(dx) >= Math.Abs(dy))
+            {
+                return new GridPos(dx > 0 ? 1 : -1, 0);
+            }
+
+            return new GridPos(0, dy > 0 ? 1 : -1);
+        }
+
+        /// <summary>
         /// Tìm đường đi ngắn nhất từ tọa độ bắt đầu đến tọa độ mục tiêu.
         /// </summary>
         /// <param name="start">Tọa độ xuất phát.</param>
