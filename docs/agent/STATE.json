@@ -1,10 +1,10 @@
 ﻿{
     "schemaVersion":  1,
-    "updated":  "2026-11-19T21:28:54+07:00",
+    "updated":  "2026-11-26T10:42:18+07:00",
     "planLocked":  true,
-    "phase":  "P0",
-    "phaseStatus":  "not_started",
-    "milestone":  "M0",
+    "phase":  "P4",
+    "phaseStatus":  "in_progress",
+    "milestone":  "M2",
     "targets":  {
                     "pcu":  10,
                     "uc":  10,
@@ -22,17 +22,17 @@
     "counts":  {
                    "pcu":  0,
                    "uc":  0,
-                   "entityClasses":  0,
-                   "umlClasses":  0,
-                   "algorithms":  0,
-                   "aiKinds":  0,
-                   "gof":  0,
-                   "unitTests":  0,
+                   "entityClasses":  28,
+                   "umlClasses":  28,
+                   "algorithms":  3,
+                   "aiKinds":  7,
+                   "gof":  3,
+                   "unitTests":  98,
                    "integrationTests":  0,
                    "playtestCases":  0,
                    "bugs":  0,
                    "commits":  {
-                                   "TV1":  0,
+                                   "TV1":  26,
                                    "TV2":  0
                                },
                    "blamePct":  {
@@ -41,17 +41,17 @@
                                 }
                },
     "gates":  {
-                  "coreHeadlessOk":  false,
-                  "allTestsGreen":  false,
+                  "coreHeadlessOk":  true,
+                  "allTestsGreen":  true,
                   "cleanRoomOk":  false,
-                  "usingAuditOk":  false
+                  "usingAuditOk":  true
               },
     "openBlockers":  [
 
                      ],
     "nextActions":  [
-                        "Khá»Ÿi táº¡o kho Git vÃ  cáº¥u hÃ¬nh .gitignore",
-                        "Táº¡o cáº¥u trÃºc solution C# vÃ  asmdef cho Game.Core",
-                        "Cháº¡y ca test Unit Ä‘áº§u tiÃªn á»Ÿ cháº¿ Ä‘á»™ Headless"
+                        "Cai dat GameLoop 60Hz va RuleEngine (src/Game.Core/Loop/)",
+                        "Tao Tool AtlasAnimationBuilder va ActorView (Moc M3)",
+                        "Mo PR ghep feat/tv1-core-combat-ai vao dev cung TV2"
                     ]
 }

@@ -2,8 +2,8 @@
 <!-- Cập nhật lần cuối: 2026-11-19 | Cập nhật bởi: Khởi tạo hạ tầng | Sở hữu: Cả hai -->
 
 ## 1. VỊ TRÍ HIỆN TẠI (CURRENT STATUS)
-- **Phase hiện tại:** P0 (Preflight & Environment Setup) | **Trạng thái:** not_started
-- **Mốc kiểm tra:** M0 (Chuẩn bị hạ tầng & Kho Git)
+- **Phase hiện tại:** P4 (Implementation - Giai đoạn 1: Core & AI Headless) | **Trạng thái:** in_progress (98 Unit Tests / 103 test cases PASS 100%, 28 lớp/kiểu Core trong 39 tệp sạch)
+- **Mốc kiểm tra:** M2 (Đang hoàn tất TV1 — Đủ 7/7 kiểu AI, 3/3 thuật toán, GoF State/Strategy/Observer, `CombatResolver`, `StatusEffect`, và 5 Phản ứng nguyên tố `ReactionResolver`).
 - **Kế hoạch tổng thể:** Đã khóa (Locked). Mục tiêu: 10 PCUs, 28 lớp UML, 34 automated tests, 40 commits.
 
 ## 2. TÓM TẮT KIẾN TRÚC HỆ THỐNG (10 DÒNG)
@@ -39,5 +39,6 @@
 - **R3 (Kỷ luật Git Blame):** Phải phân bố commit ngay từ Tuần 1, không dồn việc vào cuối kỳ.
 
 ## 6. VIỆC DANG DỞ (NEXT ACTIONS)
-- Bắt đầu Giai đoạn P0: Thiết lập kho Git, thêm `.gitignore`, tạo thư mục solution và cấu hình `.asmdef`.
-- Kích hoạt phiên làm việc đầu tiên bằng `/session-start`.
+- Hoàn thành 7/7 AI & Combat Core (M2): Đã cài đặt xong `FlitAI`, `AmbushAI`, `ChargeAI`, `SlamAI`, `CombatResolver`, `StatusEffect` (`Burn`, `Poison`, `Freeze`, `Regen`), `ReactionResolver` (5 phản ứng R1–R5), tổng 103/103 test cases PASS trong 175ms.
+- Bước tiếp theo của Đình Huy (TV1): Cài đặt `GameLoop` 60Hz fixed timestep và `RuleEngine` trong `src/Game.Core/Loop/` để khép kín toàn bộ tầng Core Headless TV1.
+- Hướng tới Mốc M3: Viết tool Editor `AtlasAnimationBuilder` và Adapter `ActorView`/`PlayerInputAdapter`/`CombatHudView` nhìn thấy trên Unity Scene.

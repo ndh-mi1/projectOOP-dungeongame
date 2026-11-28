@@ -17,3 +17,23 @@ Tài liệu này ghi lại các thông báo chuyển giao, thay đổi hợp đ�
 
 ### [2026-11-19][Cả hai] Thống nhất hạ tầng Agent & Quy tắc Commit
 - **Nội dung:** Hai bạn đã chốt tiền tố commit `[Đình Huy]:` và `[Công Huy]:`, toàn bộ tài liệu quy hoạch và các script kiểm tra tự động đã sẵn sàng cho Phase P0.
+
+### [2026-11-24][Đình Huy] Hoàn thiện hợp đồng IDamageable, IMovable và cây thực thể Actor
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn thành các interface [IDamageable.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IDamageable.cs), [IMovable.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IMovable.cs) và lớp cơ sở [Actor.cs](file:///d:/project/projectOOPnew/src/Game.Core/Entities/Actor.cs), [RoguePlayer.cs](file:///d:/project/projectOOPnew/src/Game.Core/Entities/RoguePlayer.cs). Khi bạn cài đặt các lớp vật phẩm (`Item.cs`, `Potion.cs`), bạn có thể gọi thẳng phương thức `target.Heal(amount)` hoặc tác động qua `IDamageable` mà không cần quan tâm chi tiết bên trong.
+- **Hạn cần khớp:** Mốc M1.
+
+### [2026-11-24][Đình Huy] Hoàn thiện GameEventBus và sự kiện EnemyKilledEvent
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn thành [IGameEventBus.cs](file:///d:/project/projectOOPnew/src/Game.Core/Contracts/IGameEventBus.cs), [GameEventBus.cs](file:///d:/project/projectOOPnew/src/Game.Core/Events/GameEventBus.cs) và [EnemyKilledEvent.cs](file:///d:/project/projectOOPnew/src/Game.Core/Events/EnemyKilledEvent.cs). Khi quái vật chết, `Enemy` sẽ tự động phát sự kiện này mang theo `EnemyId`, `EnemyType`, `Position` và `ExperienceReward`. Bạn có thể cho lớp `LootRoller` đăng ký lắng nghe sự kiện `EnemyKilledEvent` trên bus để thả đồ nhé!
+- **Hạn cần khớp:** Mốc M1.
+
+### [2026-11-25][Đình Huy] Hoàn thiện Swept AABB, Bresenham LOS và ActorStateMachine
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn tất bộ 3 thuật toán TV1 ([Pathfinder.cs](file:///d:/project/projectOOPnew/src/Game.Core/AI/Pathfinder.cs) đã sửa dùng `MinHeap` tương thích `netstandard2.1`, [CollisionDetector.cs](file:///d:/project/projectOOPnew/src/Game.Core/Physics/CollisionDetector.cs) dùng ô `1x1` `[x, x+1]`, [LineOfSight.cs](file:///d:/project/projectOOPnew/src/Game.Core/Physics/LineOfSight.cs)) và máy trạng thái [ActorStateMachine.cs](file:///d:/project/projectOOPnew/src/Game.Core/State/ActorStateMachine.cs). Lưu ý cho `Floor : ITileQuery`: tường đặc cần trả `IsWalkable = false` & `IsOpaque = true`, hố sâu/nước điền đúng `IsOpaque = false` để quái nhìn qua được.
+- **Hạn cần khớp:** Mốc M2.
+
+### [2026-11-26][Đình Huy] Hoàn thiện ReactionTriggeredEvent & CombatResolver cho tích hợp World/FX
+- **Gửi tới:** Nguyễn Công Huy (TV2)
+- **Nội dung:** Mình đã hoàn tất 7/7 kiểu AI và lõi chiến đấu (`CombatResolver.cs`, `StatusEffect.cs`, `ReactionResolver.cs`). Hệ thống phản ứng nguyên tố sẽ bắn [ReactionTriggeredEvent.cs](file:///d:/project/projectOOPnew/src/Game.Core/Combat/ReactionTriggeredEvent.cs) lên `GameEventBus`: đặc biệt với `Solidify` (tạm biến `Lava` thành `Basalt` trong `5.0s`), `Extinguish` (khói `2.0s`), và `Electrocute` (danh sách `AffectedTiles` cụm nước), phân hệ World/FX của bạn chỉ cần subscribe sự kiện này là tích hợp đồng bộ được ngay.
+- **Hạn cần khớp:** Mốc M2–M3.
